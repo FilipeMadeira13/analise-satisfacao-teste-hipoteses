@@ -1,132 +1,186 @@
-# 📊 Análise de Satisfação com Teste de Hipóteses
+# Análise de Satisfação de Clientes com Teste de Hipóteses
 
-## 🧠 Contexto
-
-Uma academia realizou uma mudança no layout dos equipamentos com o objetivo de melhorar a experiência dos clientes.
-
-Diante disso, surge a seguinte pergunta de negócio:
-
-> A nova disposição dos equipamentos realmente aumentou a satisfação dos usuários?
-
-Este projeto simula um cenário real de tomada de decisão orientada por dados, utilizando técnicas estatísticas para validar hipóteses.
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-black)
+![NumPy](https://img.shields.io/badge/NumPy-Numerical%20Computing-orange)
+![SciPy](https://img.shields.io/badge/SciPy-Statistical%20Analysis-green)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-red)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 ---
 
-## 🎯 Objetivo
+## Visão Geral
 
-Avaliar se houve uma diferença estatisticamente significativa na satisfação dos clientes antes e depois da mudança no layout, e interpretar se essa diferença possui relevância prática.
+Este projeto analisa o impacto de uma mudança no layout de equipamentos de uma academia sobre a satisfação dos clientes.
 
----
-
-## 📦 Dataset
-
-Os dados foram simulados para representar avaliações de satisfação em uma escala de 0 a 10:
-
-* `satisfacao_antes`: avaliação antes da mudança
-* `satisfacao_depois`: avaliação após a mudança
-
-A simulação foi construída para reproduzir um cenário realista de análise de negócio.
+A análise foi conduzida utilizando métodos estatísticos para apoiar a tomada de decisão baseada em dados, simulando um cenário real de negócio.
 
 ---
 
-## 🧹 Tratamento de Dados
+## Problema de Negócio
 
-* Verificação de tipos e estrutura dos dados
-* Análise descritiva (média, desvio padrão, distribuição)
-* Limitação dos valores ao intervalo válido (0 a 10)
-* Preparação dos dados para aplicação de testes estatísticos
+A academia realizou alterações no layout com o objetivo de melhorar a experiência dos usuários.
 
----
+A principal questão é:
 
-## 📊 Análise Exploratória (EDA)
+**A mudança no layout gerou aumento significativo na satisfação dos clientes?**
 
-Foram utilizadas técnicas de visualização para compreender o comportamento dos dados:
-
-* Histogramas para análise de distribuição
-* Boxplot para comparação entre os períodos
-
-A análise indicou um deslocamento da distribuição de satisfação após a mudança, sugerindo um possível aumento.
+A resposta a essa pergunta é fundamental para decidir se a nova configuração deve ser mantida ou revisada.
 
 ---
 
-## 🧪 Metodologia Estatística
+## Abordagem Analítica
+
+A análise seguiu uma abordagem estruturada:
+
+1. Exploração e validação dos dados
+2. Análise descritiva e visual
+3. Formulação de hipóteses
+4. Teste estatístico
+5. Interpretação dos resultados
+6. Tradução dos resultados em decisão de negócio
+
+---
+
+## Dataset
+
+Os dados foram simulados para representar avaliações de satisfação em escala de 0 a 10:
+
+* `satisfacao_antes`
+* `satisfacao_depois`
+
+A estrutura simula medições do mesmo grupo de clientes antes e depois da intervenção.
+
+---
+
+## Preparação dos Dados
+
+* Validação de tipos e consistência
+* Tratamento de limites (0 a 10)
+* Análise estatística descritiva
+* Preparação para testes inferenciais
+
+---
+
+## Análise Exploratória
+
+A análise exploratória indicou:
+
+* Deslocamento da distribuição de satisfação
+* Redução de valores mais baixos
+* Tendência de aumento após a mudança
+
+Visualizações utilizadas:
+
+* Histogramas
+* Boxplots
+
+---
+
+## Metodologia Estatística
 
 ### Hipóteses
 
-* **H0 (hipótese nula):** não há diferença na satisfação média
-* **H1 (hipótese alternativa):** há diferença na satisfação média
+* **H0:** não há diferença na média de satisfação
+* **H1:** há diferença na média de satisfação
 
 ---
 
-### Teste aplicado
+### Teste Aplicado
 
-Foi utilizado o **teste t pareado**, apropriado para comparar duas amostras dependentes (mesmos indivíduos em momentos diferentes). ([wilson0106.github.io][1])
-
----
-
-### Validação dos pressupostos
-
-Foi realizado teste de normalidade (Shapiro-Wilk) sobre a diferença entre os grupos, garantindo a adequação do teste paramétrico.
+Foi utilizado o **teste t pareado**, adequado para comparar medições do mesmo grupo em dois momentos distintos.
 
 ---
 
-### Interpretação do p-valor
+### Validação dos Pressupostos
 
-O p-valor representa a probabilidade de observarmos um resultado tão extremo quanto o obtido, assumindo que a hipótese nula seja verdadeira.
+* Teste de normalidade de Shapiro-Wilk aplicado às diferenças
+* Suposição de independência respeitada
+* Dados adequados para teste paramétrico
 
 ---
 
-## 📈 Resultados
+## Resultados Estatísticos
 
-* **P-valor:** < 0.05
-* **Diferença média:** aumento na satisfação após a mudança
+* **p-valor:** < 0.05
+* **Diferença média:** aumento na satisfação
 * **Intervalo de confiança (95%):** (0.25, 1.04)
 
 ---
 
-## 🧠 Interpretação dos Resultados
+## Insights Analíticos
 
-O intervalo de confiança indica que, com 95% de confiança, o aumento médio na satisfação está entre **0.25 e 1.04 pontos**.
-
-Como o intervalo não inclui o valor zero, isso reforça a evidência de que houve um aumento real na satisfação dos clientes.
-
-Além disso, o tamanho do efeito sugere um impacto **pequeno a moderado**, indicando que a mudança teve efeito consistente na experiência dos usuários.
-
----
-
-## 🏁 Conclusão
-
-A análise estatística fornece evidências de que a mudança no layout teve impacto positivo na satisfação dos clientes.
-
-Principais conclusões:
-
-* A hipótese nula foi rejeitada com base no p-valor
-* O aumento na satisfação é estatisticamente significativo
-* O intervalo de confiança confirma a existência de efeito real
-* O impacto observado possui relevância prática
-
-Do ponto de vista de negócio, a mudança pode ser considerada eficaz e recomenda-se sua manutenção.
+* Há evidência estatística de aumento na satisfação
+* O intervalo de confiança não inclui zero, reforçando o resultado
+* O efeito observado é consistente entre os usuários
+* O impacto é pequeno a moderado, porém relevante
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Interpretação para Negócio
+
+A mudança no layout teve efeito positivo mensurável na experiência dos clientes.
+
+Mesmo com um efeito moderado, o resultado é relevante porque:
+
+* Afeta diretamente a percepção do cliente
+* Pode influenciar retenção e fidelização
+* Melhora a experiência geral no ambiente
+
+---
+
+## Impacto de Negócio
+
+Com base nos resultados, recomenda-se:
+
+* Manutenção do novo layout
+* Monitoramento contínuo da satisfação
+* Aplicação de melhorias incrementais no ambiente
+
+Possíveis impactos:
+
+* Aumento de retenção de clientes
+* Melhoria na avaliação da academia
+* Maior engajamento dos usuários
+
+---
+
+## Limitações
+
+* Dados simulados (não reais)
+* Não considera segmentação de clientes
+* Não avalia fatores externos (horário, lotação, perfil do usuário)
+
+---
+
+## Próximos Passos
+
+* Segmentação por perfil de cliente
+* Aplicação de testes não paramétricos
+* Análise de impacto por frequência de uso
+* Construção de dashboard interativo
+* Integração com base de dados real
+
+---
+
+## Tecnologias Utilizadas
 
 * Python
 * Pandas
 * NumPy
+* SciPy
 * Matplotlib
 * Seaborn
-* SciPy
 
 ---
 
-## ▶️ Como Executar
+## Como Executar
 
 ```bash
 # Clonar repositório
 git clone https://github.com/FilipeMadeira13/analise-satisfacao-teste-hipoteses.git
 
-# Acessar pasta
+# Acessar diretório
 cd analise-satisfacao-teste-hipoteses
 
 # Instalar dependências
@@ -138,16 +192,34 @@ jupyter notebook
 
 ---
 
-## 📌 Possíveis Extensões
+## Estrutura do Projeto
 
-* Aplicação de testes não paramétricos (Mann-Whitney)
-* Segmentação de clientes (idade, frequência, perfil)
-* Construção de dashboard interativo (Streamlit ou Power BI)
-* Integração com banco de dados e SQL
+```
+analise-satisfacao-teste-hipoteses/
+│
+├── data/
+├── notebooks/
+├── src/
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **Filipe Madeira**
-Projeto desenvolvido com foco em análise de dados aplicada à tomada de decisão, como parte da construção de portfólio profissional.
+Data Analyst | Python | SQL | Estatística Aplicada
+
+Projeto desenvolvido com foco em análise de dados aplicada à tomada de decisão.
+
+---
+
+## Diferencial deste Projeto
+
+Este projeto demonstra na prática:
+
+* Aplicação de estatística inferencial em contexto real
+* Capacidade de traduzir dados em decisões de negócio
+* Comunicação clara de resultados analíticos
+* Estrutura profissional de projeto para portfólio
