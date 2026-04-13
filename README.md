@@ -73,6 +73,11 @@ A estrutura simula medições do mesmo grupo de clientes antes e depois da inter
 
 ## Como Executar
 
+Se o arquivo `data/satisfacao_simulada.csv` ainda não estiver presente, gere-o com:
+```bash
+python src/data_utils.py
+```
+
 Abra o notebook com:
 ```bash
 jupyter notebook notebooks/analise_satisfacao.ipynb

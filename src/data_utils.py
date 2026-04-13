@@ -25,6 +25,9 @@ def salvar_dados_csv(df: pd.DataFrame, path: str) -> None:
 
 
 if __name__ == "__main__":
+    import os
+
     df = gerar_dados_satisfacao()
-    salvar_dados_csv("data/satisfacao_simulada.csv")
+    os.makedirs("data", exist_ok=True)
+    salvar_dados_csv(df, "data/satisfacao_simulada.csv")
     print("Dados gerados em data/satisfacao_simulada.csv")
