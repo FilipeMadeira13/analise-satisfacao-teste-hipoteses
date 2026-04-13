@@ -54,7 +54,10 @@ A estrutura simula medições do mesmo grupo de clientes antes e depois da inter
 ## Estrutura do Projeto
 
 * `notebooks/analise_satisfacao.ipynb` — notebook principal com geração de dados, EDA e teste de hipótese.
+* `src/` — scripts utilitários para geração de dados e análises.
+* `data/` — local para armazenar dados gerados ou datasets de exemplo.
 * `requirements.txt` — dependências mínimas necessárias para reproduzir a análise.
+* `LICENSE` — licença do projeto.
 
 ## Instalação
 
