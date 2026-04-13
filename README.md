@@ -51,6 +51,32 @@ Os dados foram simulados para representar avaliações de satisfação em escala
 
 A estrutura simula medições do mesmo grupo de clientes antes e depois da intervenção.
 
+## Estrutura do Projeto
+
+* `notebooks/analise_satisfacao.ipynb` — notebook principal com geração de dados, EDA e teste de hipótese.
+* `requirements.txt` — dependências mínimas necessárias para reproduzir a análise.
+
+## Instalação
+
+1. Crie e ative um ambiente virtual:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
+2. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Como Executar
+
+Abra o notebook com:
+```bash
+jupyter notebook notebooks/analise_satisfacao.ipynb
+```
+
+Em seguida, execute todas as células para reproduzir a análise.
+
 ---
 
 ## Preparação dos Dados
